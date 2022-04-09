@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Cat Hacks</title>
+	</head>
+
+	<body style="font-family:Free Serif">
+		<h1>Admin Page</h1>
+
+		<form method="POST" action="addEmployee.php">
+		<table>
+			<th>New Employee</th>
+			<tr>
+				<td>First Name</td>
+				<td><input id=fname name=fname></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input id=lname name=lname></td>
+			</tr>
+			<tr>
+				<td>Phone</td>
+				<td><input type="tel" id=phone name=phone pattern="[0-9]{11}"></td>
+			</tr>
+		</table>
+		
+		<input type="button" type="submit" name="empInfo" value="Submit">
+		</form>
+
+		<form method="POST" action="removeEmployee.php">
+		<table>
+			<th>Remove Employee</th>
+			<tr>
+				<td>First Name</td>
+				<td><input id=fname name=fname></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input id=lname name=lname></td>
+			</tr>
+		</table>
+		
+		<input type="button" type="submit" name="empInfo" value="Submit">
+		</form>
+
+	</body>
+
+
+</html>
