@@ -1,15 +1,34 @@
 body {
-    background-color: #00008B;
+    background-color: #228B22;
 }
 h1 {
     text-align:center;
-    color: #FFFFFF;
+    color: ;
     text-decoration: underline;
 }
 th {
-    color: #FFFFFF;
+    color: ;
+    text-decoration: underline;
 }
 tr {
     text-align:center;
-    color: #FFFFFF;
+    color: ;
+}
+table{
+    text-align:center;
+}
+
+.center{
+    margin-left:auto;
+    margin-right:auto;
+}
+.button1{
+    position: absolute;
+	top: 50%;
+	left: 51.5%;
+}
+.button2{
+    position: absolute;
+    top: 37%;
+    left: 51.5%;
 }
