@@ -1,4 +1,5 @@
 <?php
+header("Location: http://http://cs.uky.edu/~tajo254/cathacks.html");
 header("Content-type: html; charset=utf-8");
 
 ini_set('display_errors', 1);
@@ -25,6 +26,7 @@ if (!empty($_POST)) {
 	$connection = $conn->prepare($add_employee);
 	$connection->execute();
 	$connection->close();
+	exit;
 	
 }	
 ?>
