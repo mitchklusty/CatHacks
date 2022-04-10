@@ -26,7 +26,8 @@ def incoming_sms():
     # Determine the right reply for this message
     if 'quit' in body or 'leaving' in body or 'leave' in body:
         times = clock_out_sql(phone, now.hour, now.minute)
-        resp.message(f"Hate to see you go. You made {MINMUM_WAGE*times[0]}")
+        format_float = "{:.2f}".format(MINMUM_WAGE*times)
+        resp.message(f"Hate to see you go. You made ${format_float}")
 
     elif 'pay' in body:
         resp.message("You'll get your money, when you fix this darn door!")
@@ -42,12 +43,13 @@ def clock_in_sql(phone, hours, mins):
         connection = mysql.connector.connect(host='mysql.cs.uky.edu',
                                              database='tajo254',
                                              user='tajo254',
-                                             password='90179T aj!')
-
-        sql_query = f"UPDATE employees SET  is_Clocked = True, Clock_In_Hours = {hours}, Clock_In_Minutes = {mins} WHERE phone LIKE '{phone}'; "
+                                             password='90179T aj!',
+                                             autocommit=True)
+        sql_query = f"UPDATE employees SET is_Clocked = True, Clock_In_Hours = {hours}, Clock_In_Minutes = {mins} WHERE phone LIKE '{phone}'; "
         print(sql_query)
         cursor = connection.cursor()
         cursor.execute(sql_query)
+        employees = cursor.fetchall()
 
         sql_query = f"SELECT * FROM employees WHERE phone LIKE {phone}; "
         cursor = connection.cursor()
@@ -70,8 +72,8 @@ def clock_out_sql(phone, hours, mins):
         connection = mysql.connector.connect(host='mysql.cs.uky.edu',
                                              database='tajo254',
                                              user='tajo254',
-                                             password='90179T aj!')
-
+                                             password='90179T aj!',
+                                             autocommit=True)
         sql_query = f"UPDATE employees SET is_Clocked = False, Clock_Out_Hours = {hours}, Clock_Out_Minutes = {mins} WHERE phone LIKE {phone}; "
         print(sql_query)
         cursor = connection.cursor()
