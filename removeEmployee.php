@@ -1,4 +1,5 @@
 <?php
+header("Location: https://cs.uky.edu/~tajo254/cathacks.html");
 header("Content-type: html, charset=utf-8, Location: cs.uky.edu/~tajo254/cathacks.html");
 
 $emp = "";
