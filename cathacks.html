@@ -25,13 +25,17 @@
 				<td><input type="tel" id=phone name=phone pattern="[0-9]{11}"></td>
 			</tr>
 			<tr>
-				<td>Start Time</td>
+				<td>Clock-In Time</td>
 				<td><input type="number" style="width: 40px;" id=hour name=hour>:<input type="number" style="width: 40px;" id=min name=min></td>
 
 			</tr>
+			<tr>
+				<td>Clock-Out Time</td>
+				<td><input type="number" style="width: 40px;" id=out_hour name=out_hour>:<input type="number" style="width: 40px;" id=out_min name=out_min></td>
+			</tr>
 		</table>
 		
-		<input type="button" type="submit" name="empInfo" value="Submit">
+		<button type="submit">Submit</button>
 		</form>
 
 		<form method="POST" action="removeEmployee.php">
@@ -47,10 +51,9 @@
 			</tr>
 		</table>
 		
-		<input type="button" type="submit" name="empInfo" value="Submit">
+		<button type="submit">Submit</button>
 		</form>
-
-	</body>
+		</body>
 
 
 </html>
