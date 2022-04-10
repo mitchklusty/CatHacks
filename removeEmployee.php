@@ -1,7 +1,7 @@
 <?php
-header("Content-type: html; charset=utf-8");
+header("Content-type: html, charset=utf-8, Location: cs.uky.edu/~tajo254/cathacks.html");
 
-$emp = ""
+$emp = "";
 if (!empty($_POST)) {	
 	$fname = htmlspecialchars($_POST["fname"]);
 	$lname = htmlspecialchars($_POST["lname"]);
@@ -13,21 +13,12 @@ if (!empty($_POST)) {
 		die("Connection failed: ".$conn->connect_error);
 	}
 
-	$check_employee = "SELECT * FROM employees WHERE fname = ? AND lname = ?";
-	$remove_employee = "DELETE FROM employees WHERE fname = ? AND lname = ?";
+	$remove_employee = "DELETE FROM employees WHERE fname = '".$fname."' AND lname = '".$lname."';";
 
-	header("Content-Type: application/json; charset=utf-8");
-	$result = $conn->prepare($check_employee);
-	$result->bind_param("s", $menu);
-	$result->execute();
-	$result->store_result();
-
-	if ($result->num_rows > 0){
-		ob_start();
-		$connection = $conn->prepare($remove_employee);
-		$connection->execute();
-		$connection->close();
-	}
+	$connection = $conn->prepare($remove_employee);
+	$connection->execute();
+	$connection->close();
+	exit();
 
 }	
 ?>
