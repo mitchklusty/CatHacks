@@ -4,13 +4,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Cat Hacks</title>
+        <link rel ="stylesheet" type="text/css" href="website_style.css" />
 	</head>
-
+    	<img src="hackysac.jpg" alt="Image of an ordinary hackysac">
 	<body style="font-family:Free Serif">
-		<h1>Admin Page</h1>
-
+		<h1>HackySac Inc. Payroll System</h1>
 		<form method="POST" action="addEmployee.php">
-		<table>
+		<table class="center">
 			<th>New Employee</th>
 			<tr>
 				<td>First Name</td>
@@ -34,12 +34,12 @@
 				<td><input type="number" style="width: 40px;" id=out_hour name=out_hour>:<input type="number" style="width: 40px;" id=out_min name=out_min></td>
 			</tr>
 		</table>
-		
-		<button type="submit">Submit</button>
+        <p> </p>
+		<button type="submit" class="button2">Submit</button>
 		</form>
 
 		<form method="POST" action="removeEmployee.php">
-		<table>
+		<table class="center">
 			<th>Remove Employee</th>
 			<tr>
 				<td>First Name</td>
@@ -50,8 +50,8 @@
 				<td><input id=lname name=lname></td>
 			</tr>
 		</table>
-		
-		<button type="submit">Submit</button>
+
+		<button type="submit" class="button1">Submit</button>
 		</form>
 		</body>
 
