@@ -1,7 +1,15 @@
-#body{
-
+body {
+    background-color: #00008B;
 }
-#head{
-    background-color: #66CCFF;
-    color:red;
+h1 {
+    text-align:center;
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+th {
+    color: #FFFFFF;
+}
+tr {
+    text-align:center;
+    color: #FFFFFF;
 }
